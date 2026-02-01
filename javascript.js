@@ -3,12 +3,16 @@ const selectionButton = document.createElement("button")
 const container = document.querySelector(".container")
 const div = document.createElement("div")
 
-main.appendChild(selectionButton)
+main.insertBefore(selectionButton, container)
 selectionButton.textContent = "Choose Size"
 div.style.backgroundColor = 'black'
-div.style.width = "200px"
-div.style.height = "100px"
-div.style.width = "6%"
+div.style.height = "90px"
+div.style.flexGrow = "1"
+div.style.flexShrink = "0"
+div.style.flexBasis = "6%"
+
+
+
 
 selectionButton.addEventListener("click", () => {
     let eek = prompt("Grid Size?")
@@ -21,12 +25,13 @@ console.log(div)
 // Do this 16 x 16 times
 
 for (let i = 0; i < 16 * 16; i++) {
-
     let store = "";
     store = div.cloneNode()
     
     container.appendChild(store)
 }
+
+
 
 const list = container.childNodes
 list.forEach((element) => {
