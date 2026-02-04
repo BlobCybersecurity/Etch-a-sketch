@@ -1,4 +1,4 @@
-const { cloneElement } = require("react")
+
 
 const main = document.querySelector(".main")
 const selectionButton = document.createElement("button")
@@ -9,18 +9,24 @@ main.insertBefore(selectionButton, container)
 
 div.style.backgroundColor = 'black'
 div.style.height = "90px"
-div.style.flexGrow = "1"
 div.style.flexShrink = "0"
+div.style.width = `90px`
 
 selectionButton.textContent = "Choose Size"
 selectionButton.style.alignSelf = "center"
 
 
 
-    for (let i = 0; i < 16 * 16; i++) {
-        let store = "";
-        store = div.cloneNode()
-        container.appendChild(store)
+    for (let i = 0; i < 16; i++) {
+        for (let j = 0; j < 16; j++) {
+             let store = "";
+
+            store = div.cloneNode()
+            store.style.width = `${(960 / 16 ) - 3}px`
+            store.style.height = `${(960 / 16 ) - 3}px`
+            container.appendChild(store)
+        }
+       
     }
 
 
@@ -35,7 +41,9 @@ selectionButton.style.alignSelf = "center"
         for (let i = 0; i < GridSize; i++) {
             for (let j = 0; j < GridSize; j++) {
                 let storage = ""
-                storage = cloneElement(div)
+                storage = div.cloneNode()
+                storage.style.width = `${(960 / GridSize ) - 3}px`
+                storage.style.height = `${(960 / GridSize ) - 3}px`
                 container.appendChild(storage)
             }
         }
@@ -85,7 +93,9 @@ const list = container.childNodes
 // for (let i = 0; i < GridX; i++) {
    
     // for (let j = 0; j < GridX; j++) {
-            // Clone Div
+            // let each width = Divide 960 by GridX
+            // 
 //      }
 
 // }
+
