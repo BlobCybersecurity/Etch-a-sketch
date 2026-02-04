@@ -49,26 +49,36 @@ selectionButton.style.alignSelf = "center"
         console.log("Clicked")
         container.textContent = ''
         let GridSize = prompt("Grid Size: ")
+        do {
 
-        for (let i = 0; i < GridSize; i++) {
-            for (let j = 0; j < GridSize; j++) {
-                let storage = ""
-                storage = div.cloneNode()
-                storage.style.width = `${(800 / GridSize ) - 3}px`
-                storage.style.height = `${(800 / GridSize ) - 3}px`
-                container.appendChild(storage)
-            }
-        }
+                 for (let i = 0; i < GridSize; i++) {
+                    for (let j = 0; j < GridSize; j++) {
+                        let storage = ""
+                        storage = div.cloneNode()
+                        storage.style.width = `${(800 / GridSize ) - 3}px`
+                        storage.style.height = `${(800 / GridSize ) - 3}px`
+                        container.appendChild(storage)
+                    }
+                }
     
-        const list = container.childNodes
-        list.forEach((element) => {
+                    const list = container.childNodes
+                    list.forEach((element) => {
 
-            element.addEventListener("mouseenter", function (e) {
-                let randomCol = randomCOl()
-                e.target.style.backgroundColor = `${randomCol}`
-            })
-        }) 
+                        element.addEventListener("mouseenter", function (e) {
+                            let randomCol = randomCOl()
+                            e.target.style.backgroundColor = `${randomCol}`
+                        })
+                    }) 
 
+                
+            } while (GridSize <= 100 && GridSize);
+
+        
+
+                
+            
+        
+       
     })
 
 
@@ -95,21 +105,4 @@ const list = container.childNodes
 
 
 
-// Grid Breakdown
-
-
-// iteration 0: 1, 2, 3, x...
-
-// iteration 1: 1, 2, 3, x...
-
-// iteration x...: 1, 2, 3, x...
-
-// for (let i = 0; i < GridX; i++) {
-   
-    // for (let j = 0; j < GridX; j++) {
-            // let each width = Divide 960 by GridX
-            // 
-//      }
-
-// }
 
