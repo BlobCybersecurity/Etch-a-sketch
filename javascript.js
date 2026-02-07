@@ -23,13 +23,6 @@ container.style.alignSelf = "center"
 container.style.display = "flex"
 
 selectionButton.textContent = "Choose Size"
-
-
-
-
-
-
-
     for (let i = 0; i < 16; i++) {
         for (let j = 0; j < 16; j++) {
              let store = "";
@@ -39,13 +32,7 @@ selectionButton.textContent = "Choose Size"
             store.style.height = `${(800 / 16 ) - 3}px`
             container.appendChild(store)
         }
-       
     }
-
-
- 
-
-
     selectionButton.addEventListener("click", () => {
         console.log("Clicked")
         container.textContent = ''
@@ -53,24 +40,6 @@ selectionButton.textContent = "Choose Size"
         while (GridSize > 100) {
             GridSize = prompt("Grid Size: ")
         }
-            
-            
-        
-
-        
-        
-          
-           
-        
-
-            
-
-            
-            
-            
-        
-        
-        
              for (let i = 0; i < GridSize; i++) {
                     for (let j = 0; j < GridSize; j++) {
                         let storage = ""
@@ -89,26 +58,7 @@ selectionButton.textContent = "Choose Size"
                             e.target.style.backgroundColor = `${randomCol}`
                         })
                     }) 
-        
-
-
-                 
-
-                
-            
-        
-
-                
-            
-        
-       
     })
-
-
-
-
-
-
 
 const list = container.childNodes
     list.forEach((element) => {
@@ -119,13 +69,3 @@ const list = container.childNodes
     })
 
 })
-
-
-
-
-
-
-
-
-
-
