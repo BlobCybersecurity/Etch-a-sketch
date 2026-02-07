@@ -1,9 +1,8 @@
-
-
 const main = document.querySelector(".main")
 const selectionButton = document.createElement("button")
 const container = document.querySelector(".container")
 const div = document.createElement("div")
+const topp = document.querySelector(".top")
 
   function randomRGB() {
         return Math.floor(Math.random() * 256)
@@ -13,16 +12,18 @@ const div = document.createElement("div")
         return `rgb(${randomRGB()},${randomRGB()},${randomRGB()})`;
     }
 
-main.insertBefore(selectionButton, container)
+topp.appendChild(selectionButton)
 
 div.style.backgroundColor = "White"
 div.style.outline = "solid black"
 div.style.height = "90px"
 div.style.flexShrink = "0"
 div.style.width = `90px`
+container.style.alignSelf = "center"
+container.style.display = "flex"
 
 selectionButton.textContent = "Choose Size"
-selectionButton.style.alignSelf = "center"
+
 
 
 
@@ -42,16 +43,35 @@ selectionButton.style.alignSelf = "center"
     }
 
 
-  
+ 
 
 
     selectionButton.addEventListener("click", () => {
         console.log("Clicked")
         container.textContent = ''
         let GridSize = prompt("Grid Size: ")
-        do {
+        while (GridSize > 100) {
+            GridSize = prompt("Grid Size: ")
+        }
+            
+            
+        
 
-                 for (let i = 0; i < GridSize; i++) {
+        
+        
+          
+           
+        
+
+            
+
+            
+            
+            
+        
+        
+        
+             for (let i = 0; i < GridSize; i++) {
                     for (let j = 0; j < GridSize; j++) {
                         let storage = ""
                         storage = div.cloneNode()
@@ -69,10 +89,13 @@ selectionButton.style.alignSelf = "center"
                             e.target.style.backgroundColor = `${randomCol}`
                         })
                     }) 
+        
+
+
+                 
 
                 
-            } while (GridSize <= 100 && GridSize);
-
+            
         
 
                 

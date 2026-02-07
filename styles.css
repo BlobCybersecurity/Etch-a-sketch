@@ -7,9 +7,28 @@
     display: flex;
     flex-wrap: wrap;
     gap: 3px;
-    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
     max-width: 800px;
+  
 }
+
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top {
+    display: flex;
+    justify-content: center;
+    
+    padding: 10px;
+}
+
+
 
 
 
